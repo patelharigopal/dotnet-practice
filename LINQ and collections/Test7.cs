@@ -24,7 +24,7 @@ class Test7
     static string DownloadContent()
     {
         using HttpClient client = new HttpClient();
-        string result = client.GetStringAsync("http://example.com");
+        string result = client.GetString("http://example.com");
         return result;
     }
 }
