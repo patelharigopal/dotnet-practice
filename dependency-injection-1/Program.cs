@@ -12,9 +12,6 @@ app.Use(async (context, next) =>
     var scoped = context.RequestServices.GetService<ScopedDate>();
     var transient = context.RequestServices.GetService<TransientDate>();
 
-    await context.Response.WriteAsync("Open this page in two tabs \n");
-    await context.Response.WriteAsync("Keep refreshing and you will see the three different DI behaviors\n");
-    await context.Response.WriteAsync("----------------------------------\n");
     await context.Response.WriteAsync($"Singleton : {single.Date.ToString("MM/dd/yyyy hh:mm:ss.fff tt")}\n");
     await context.Response.WriteAsync($"Scoped: {scoped.Date.ToString("MM/dd/yyyy hh:mm:ss.fff tt")}\n");
     await context.Response.WriteAsync($"Transient: {transient.Date.ToString("MM/dd/yyyy hh:mm:ss.fff tt")}\n");
@@ -29,7 +26,6 @@ app.Run(async (context) =>
     var scoped = context.RequestServices.GetService<ScopedDate>();
     var transient = context.RequestServices.GetService<TransientDate>();
 
-    await context.Response.WriteAsync("----------------------------------\n");
     await context.Response.WriteAsync($"Singleton : {single.Date.ToString("MM/dd/yyyy hh:mm:ss.fff tt")}\n");
     await context.Response.WriteAsync($"Scoped: {scoped.Date.ToString("MM/dd/yyyy hh:mm:ss.fff tt")}\n");
     await context.Response.WriteAsync($"Transient: {transient.Date.ToString("MM/dd/yyyy hh:mm:ss.fff tt")}\n");
