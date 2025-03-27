@@ -40,14 +40,14 @@ class Test7
         Console.WriteLine(result3);
     }
 
-    static async Task<string> DownloadContentAsync()
+    async Task<string> DownloadContentAsync()
     {
         using HttpClient client = new HttpClient();
         string result = await client.GetStringAsync("http://example.com");
         return result;
     }
 
-    static string DownloadContent()
+    string DownloadContent()
     {
         using HttpClient client = new HttpClient();
         string result = client.GetString("http://example.com");
